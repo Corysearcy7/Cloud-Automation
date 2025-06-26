@@ -1,13 +1,12 @@
 # Cloud-Automation
 Cloud Automation using Ansible
-
 ---
 - name: Create Digital Ocean Droplets
   hosts: localhost
   connection: local
   gather_facts: false
 
-  vars:
+- vars:
     droplet_name_prefix: "CoryS-2504-WP"
     region: "nyc3"
     size: "s-1vcpu-1gb"
@@ -18,7 +17,7 @@ Cloud Automation using Ansible
       - CoryS-2504-WP1
       - CoryS-2504-WP2
 
-  tasks:
+- tasks:
     - name: Create SSH Key in Digital Ocean
       digital_ocean_sshkey:
         name: "{{ ssh_key_name }}"
